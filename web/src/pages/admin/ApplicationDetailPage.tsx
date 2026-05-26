@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
@@ -48,7 +48,6 @@ function Field({ label, value }: { label: string; value?: string | number | null
 
 export function ApplicationDetailPage() {
   const { id } = useParams<{ id: string }>()
-  const navigate = useNavigate()
   const queryClient = useQueryClient()
 
   const [approveOpen, setApproveOpen] = useState(false)

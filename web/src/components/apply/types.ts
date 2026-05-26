@@ -38,7 +38,7 @@ export const step3Schema = z.object({
   diploma: z.instanceof(File, { message: 'Diploma obrigatório' }).optional(),
   crpCard: z.instanceof(File, { message: 'Carteira do CRP obrigatória' }).optional(),
   idDoc: z.instanceof(File, { message: 'Documento de identidade obrigatório' }).optional(),
-  termsAccepted: z.literal(true, { errorMap: () => ({ message: 'Você deve aceitar os termos' }) }),
+  termsAccepted: z.literal(true, { error: 'Você deve aceitar os termos' }),
 })
 
 export const applicationSchema = step1Schema.merge(step2Schema).merge(step3Schema)
