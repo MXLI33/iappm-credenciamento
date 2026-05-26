@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useForm, FormProvider } from 'react-hook-form'
+import { useForm, FormProvider, type Resolver } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Link } from 'react-router-dom'
 import { Loader2 } from 'lucide-react'
@@ -28,7 +28,7 @@ export function ApplyPage() {
   const [submitError, setSubmitError] = useState<string>()
 
   const methods = useForm<ApplicationFormData>({
-    resolver: zodResolver(applicationSchema),
+    resolver: zodResolver(applicationSchema) as Resolver<ApplicationFormData>,
     defaultValues: {
       modalidade: 'ambos',
       specialties: [],
