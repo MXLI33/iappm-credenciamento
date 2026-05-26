@@ -10,9 +10,9 @@ interface LogoProps {
 }
 
 const sizes = {
-  sm: { box: 'h-8 w-8 rounded-lg text-xs', label: 'text-base' },
-  md: { box: 'h-9 w-9 rounded-xl text-sm', label: 'text-lg' },
-  lg: { box: 'h-12 w-12 rounded-2xl text-base', label: 'text-2xl' },
+  sm: { img: 'h-8 w-8', label: 'text-base' },
+  md: { img: 'h-9 w-9', label: 'text-lg' },
+  lg: { img: 'h-12 w-12', label: 'text-2xl' },
 }
 
 export function Logo({ size = 'md', variant = 'default', showText = true, className, asLink = true }: LogoProps) {
@@ -21,13 +21,11 @@ export function Logo({ size = 'md', variant = 'default', showText = true, classN
 
   const inner = (
     <div className={cn('flex items-center gap-2.5', className)}>
-      <div className={cn(
-        'flex items-center justify-center shrink-0 font-extrabold tracking-tighter',
-        s.box,
-        isWhite ? 'bg-white text-primary-700' : 'bg-primary-700 text-white'
-      )}>
-        IA
-      </div>
+      <img
+        src="/logo.png"
+        alt="IAPPM"
+        className={cn('shrink-0 object-contain', s.img)}
+      />
       {showText && (
         <span className={cn(
           'font-bold tracking-tight leading-none',

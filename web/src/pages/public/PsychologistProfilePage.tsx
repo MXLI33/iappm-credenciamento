@@ -230,12 +230,21 @@ export function PsychologistProfilePage() {
           </a>
         </div>
 
-        {/* Legal disclaimer */}
-        <p className="mt-8 text-center text-xs text-muted-foreground/70 leading-relaxed max-w-lg mx-auto">
-          As informações apresentadas neste perfil são de responsabilidade do profissional credenciado.
-          O IAPPM não se responsabiliza pelo conteúdo fornecido pelos psicólogos cadastrados.
-          Verifique o registro do profissional no Conselho Federal de Psicologia (CFP).
-        </p>
+        {/* Responsável técnico + legal disclaimer */}
+        <div className="mt-8 rounded-xl border border-gray-100 bg-gray-50 p-4 text-xs text-muted-foreground leading-relaxed space-y-2">
+          <p>
+            <span className="font-semibold text-gray-700">Responsável técnico:</span>{' '}
+            {psi.name} — CRP {psi.crp}
+          </p>
+          <p>
+            <span className="font-semibold text-gray-700">Atenção:</span> Este serviço não substitui urgência ou emergência psiquiátrica.
+            Em caso de crise, ligue <strong>188</strong> (CVV) ou <strong>192</strong> (SAMU).
+          </p>
+          <p>
+            As informações deste perfil são de responsabilidade do profissional credenciado.
+            Verifique o registro no Conselho Federal de Psicologia (CFP).
+          </p>
+        </div>
       </div>
     </PageLayout>
   )

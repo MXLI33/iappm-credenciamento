@@ -264,7 +264,7 @@ export function HomePage() {
             </Button>
           </div>
           <p className="mt-6 text-xs text-muted-foreground">
-            ⚠️ Em caso de crise, ligue <strong>188</strong> (CVV) ou <strong>192</strong> (SAMU).
+            Em caso de crise, ligue <strong>188</strong> (CVV) ou <strong>192</strong> (SAMU).
           </p>
         </div>
       </section>

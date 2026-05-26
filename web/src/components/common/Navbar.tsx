@@ -10,6 +10,8 @@ const navLinks = [
   { label: 'Início', href: '/' },
   { label: 'Psicólogos', href: '/psicologos' },
   { label: 'Como funciona', href: '/como-funciona' },
+  { label: 'Sou psicólogo', href: '/sou-psicologo' },
+  { label: 'Sobre', href: '/sobre' },
 ]
 
 export function Navbar() {

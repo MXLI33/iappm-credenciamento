@@ -5,6 +5,12 @@ import { PsychologistProfilePage } from '@/pages/public/PsychologistProfilePage'
 import { HowItWorksPage } from '@/pages/public/HowItWorksPage'
 import { ApplyPage } from '@/pages/public/ApplyPage'
 import { LoginPage } from '@/pages/public/LoginPage'
+import { AboutPage } from '@/pages/public/AboutPage'
+import { ContactPage } from '@/pages/public/ContactPage'
+import { FaqPage } from '@/pages/public/FaqPage'
+import { TermsPage } from '@/pages/public/TermsPage'
+import { PrivacyPage } from '@/pages/public/PrivacyPage'
+import { ForPsychologistsPage } from '@/pages/public/ForPsychologistsPage'
 import { NotFoundPage } from '@/pages/public/NotFoundPage'
 import { ApplicationsPage } from '@/pages/admin/ApplicationsPage'
 import { ApplicationDetailPage } from '@/pages/admin/ApplicationDetailPage'
@@ -17,6 +23,12 @@ export default function App() {
       <Route path="/psicologos/:slug" element={<PsychologistProfilePage />} />
       <Route path="/como-funciona" element={<HowItWorksPage />} />
       <Route path="/credenciar" element={<ApplyPage />} />
+      <Route path="/sou-psicologo" element={<ForPsychologistsPage />} />
+      <Route path="/sobre" element={<AboutPage />} />
+      <Route path="/contato" element={<ContactPage />} />
+      <Route path="/faq" element={<FaqPage />} />
+      <Route path="/termos" element={<TermsPage />} />
+      <Route path="/privacidade" element={<PrivacyPage />} />
       <Route path="/entrar" element={<LoginPage />} />
       <Route path="/admin/credenciamento" element={<ApplicationsPage />} />
       <Route path="/admin/credenciamento/:id" element={<ApplicationDetailPage />} />
