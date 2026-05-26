@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
-import { Link } from 'react-router-dom'
+import { Navbar } from '@/components/common/Navbar'
+import { Footer } from '@/components/common/Footer'
 import { SearchFilters } from '@/components/search/SearchFilters'
 import { PsychologistGrid } from '@/components/search/PsychologistGrid'
 import { searchPsychologists } from '@/services/psychologists'
-import { Footer } from '@/components/common/Footer'
 import type { SearchParams } from '@/types'
 
 const defaultParams: SearchParams = { page: 1, limit: 12 }
@@ -59,50 +59,28 @@ export function PsychologistsPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
-      {/* Header */}
-      <header className="bg-gradient-to-b from-primary-800 to-primary-700 pb-8 pt-6">
-        <div className="page-container">
-          {/* Top nav */}
-          <div className="flex items-center justify-between mb-6">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 backdrop-blur">
-                <span className="text-sm font-bold text-white">IA</span>
-              </div>
-              <span className="hidden font-bold text-white sm:block text-lg">IAPPM</span>
-            </Link>
+    <div className="flex min-h-screen flex-col bg-gray-50">
+      <Navbar />
 
-            <nav className="flex items-center gap-2">
-              <Link
-                to="/credenciar"
-                className="flex items-center gap-1.5 rounded-full bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-500 transition-colors"
-              >
-                Quero Começar a Psicoterapia
-              </Link>
-              <Link
-                to="/credenciar"
-                className="flex items-center gap-1.5 rounded-full bg-white/10 border border-white/30 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 transition-colors"
-              >
-                Sou Psicólogo(a)
-              </Link>
-              <Link
-                to="/como-funciona"
-                className="hidden sm:flex items-center gap-1.5 rounded-full bg-white/10 border border-white/30 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 transition-colors"
-              >
-                Como Funciona
-              </Link>
-            </nav>
-          </div>
-
-          {/* Filters */}
-          <div className="rounded-xl bg-white/10 backdrop-blur border border-white/20 p-4">
-            <SearchFilters onSearch={handleSearch} loading={isFetching} />
-          </div>
+      {/* Page header */}
+      <div className="bg-white border-b border-gray-100">
+        <div className="page-container py-6">
+          <h1 className="text-xl font-bold text-gray-900">Encontre seu psicólogo</h1>
+          <p className="text-sm text-muted-foreground mt-0.5">
+            Psicólogos credenciados com CRP verificado em todo o Brasil
+          </p>
         </div>
-      </header>
+      </div>
+
+      {/* Filters */}
+      <div className="bg-white border-b border-gray-100 shadow-sm">
+        <div className="page-container py-4">
+          <SearchFilters onSearch={handleSearch} loading={isFetching} />
+        </div>
+      </div>
 
       {/* Results */}
-      <main className="flex-1 bg-gray-50">
+      <main className="flex-1">
         <div className="page-container py-8">
           <PsychologistGrid
             psychologists={data?.data ?? []}
