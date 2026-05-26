@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { Eye, Search } from 'lucide-react'
+import { Logo } from '@/components/common/Logo'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -42,16 +43,12 @@ export function ApplicationsPage() {
   return (
     <div className="flex min-h-screen flex-col bg-gray-50">
       {/* Admin header */}
-      <header className="border-b border-gray-200 bg-white px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-              <span className="text-sm font-bold text-white">IA</span>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-foreground">IAPPM Admin</p>
-              <p className="text-xs text-muted-foreground">Credenciamento</p>
-            </div>
+      <header className="border-b border-gray-100 bg-white px-6 h-16 flex items-center">
+        <div className="flex items-center justify-between w-full">
+          <div className="flex items-center gap-4">
+            <Logo size="md" asLink={false} />
+            <div className="hidden sm:block h-5 w-px bg-gray-200" />
+            <p className="hidden sm:block text-sm text-muted-foreground">Painel Administrativo</p>
           </div>
           <Button variant="outline" size="sm" asChild>
             <Link to="/psicologos">Ver plataforma</Link>

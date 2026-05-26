@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Link } from 'react-router-dom'
 import { Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Logo } from '@/components/common/Logo'
 import { StepIndicator } from '@/components/apply/StepIndicator'
 import { Step1Personal } from '@/components/apply/Step1Personal'
 import { Step2Professional } from '@/components/apply/Step2Professional'
@@ -124,15 +125,10 @@ export function ApplyPage() {
   return (
     <div className="flex min-h-screen flex-col bg-gray-50">
       {/* Header */}
-      <header className="bg-primary py-4 shadow-sm">
-        <div className="page-container flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/20">
-              <span className="text-sm font-bold text-white">IA</span>
-            </div>
-            <span className="font-bold text-white hidden sm:block">IAPPM</span>
-          </Link>
-          <p className="text-sm text-primary-100 font-medium">Credenciamento de Psicólogos</p>
+      <header className="bg-white border-b border-gray-100 shadow-sm">
+        <div className="page-container flex h-16 items-center justify-between">
+          <Logo size="md" />
+          <p className="text-sm text-muted-foreground font-medium hidden sm:block">Credenciamento de Psicólogos</p>
         </div>
       </header>
 

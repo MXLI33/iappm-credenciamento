@@ -4,6 +4,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { ArrowLeft, CheckCircle2, XCircle, Eye, Loader2, FileText, Image } from 'lucide-react'
+import { Logo } from '@/components/common/Logo'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -108,14 +109,16 @@ export function ApplicationDetailPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-gray-50">
-      <header className="border-b border-gray-200 bg-white px-6 py-4">
-        <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" asChild>
+      <header className="border-b border-gray-100 bg-white px-6 h-16 flex items-center">
+        <div className="flex items-center gap-3 w-full">
+          <Button variant="ghost" size="icon" className="h-8 w-8 shrink-0" asChild>
             <Link to="/admin/credenciamento"><ArrowLeft className="h-4 w-4" /></Link>
           </Button>
-          <div>
-            <p className="text-sm font-semibold text-foreground">Detalhe da Solicitação</p>
-            <p className="text-xs text-muted-foreground font-mono">{app.protocol}</p>
+          <Logo size="sm" asLink={false} />
+          <div className="hidden sm:block h-4 w-px bg-gray-200" />
+          <div className="hidden sm:block">
+            <p className="text-sm font-semibold text-foreground leading-none">Detalhe da Solicitação</p>
+            <p className="text-xs text-muted-foreground font-mono mt-0.5">{app.protocol}</p>
           </div>
           <div className="ml-auto flex items-center gap-2">
             <StatusBadge status={app.status} />
